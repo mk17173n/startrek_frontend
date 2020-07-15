@@ -67,7 +67,7 @@ dob: actorDob,
 
 
 
-fetch("http://localhost:3000/characters", {
+fetch("https://startrek-backend.herokuapp.com/characters", {
 method: "POST",
 headers: {
     "Content-Type": "application/json",
@@ -101,7 +101,7 @@ function handleLike(e) {
     const newLikes = parseInt(likeCount.textContent) + 1
     const characterId = outerLi.dataset.id
   
-    fetch(`http://localhost:3000/characters/${characterId}`, {
+    fetch(`https://startrek-backend.herokuapp.com/characters/${characterId}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -155,7 +155,7 @@ function renderAllCharacters(characters) {
 
 
   // initial fetch request
-fetch("http://localhost:3000/characters")
+fetch("https://startrek-backend.herokuapp.com/characters")
   .then(r => r.json())
   .then(characters => {
     // once we're here, do DOM stuff
@@ -175,7 +175,7 @@ fetch("http://localhost:3000/characters")
    //TEST CODE
 
 
-  // fetch("http://localhost:3000/actors")
+  // fetch("https://startrek-backend.herokuapp.com/actors")
   // .then(r => r.json())
   // .then(actors=> {
   //   // once we're here, do DOM stuff
@@ -234,7 +234,7 @@ fetch("http://localhost:3000/characters")
 // description.addEventListener("click", e=> {
 //   newDescription = e.target.textContent.toUpperCase()
  
-//   fetch(`http://localhost:3000/characters/${characterObj.id}`, {
+//   fetch(`https://startrek-backend.herokuapp.com/characters/${characterObj.id}`, {
 //       method: "PATCH",
 //       headers: {
 //         "Content-Type": "application/json",
@@ -252,7 +252,7 @@ fetch("http://localhost:3000/characters")
 // function handleDelete(e) {
 //   const outerLi = e.target.closest(".card")
 //   const characterId = outerLi.dataset.id
-//   fetch(`http://localhost:3000/characters/${characterId}`, {
+//   fetch(`https://startrek-backend.herokuapp.com/characters/${characterId}`, {
 //     method: "DELETE"
 //   })
 //     .then(r => r.json())
